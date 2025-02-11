@@ -9,3 +9,7 @@ C:\Users\HP\source\repos\Supermarket Management System\bin\Debug\Supermarket Man
 C:\Users\HP\source\repos\Supermarket Management System\bin\Debug\Supermarket Management System.pdb
 C:\Users\HP\source\repos\Supermarket Management System\obj\Debug\Supermarket Management System.exe
 C:\Users\HP\source\repos\Supermarket Management System\obj\Debug\Supermarket Management System.pdb
+C:\Users\HP\source\repos\Supermarket Management System\bin\Debug\System.Data.SqlClient.dll
+C:\Users\HP\source\repos\Supermarket Management System\bin\Debug\System.Data.SqlClient.xml
+C:\Users\HP\source\repos\Supermarket Management System\obj\Debug\Supermar.4FC8E29B.Up2Date
+C:\Users\HP\source\repos\Supermarket Management System\obj\Debug\Supermarket_Management_System.CategoryForm.resources

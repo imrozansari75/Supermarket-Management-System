@@ -60,15 +60,30 @@ namespace Supermarket_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-TLFGHHS\\SQLEXPRESS;Initial Catalog=Imrozdb;Integrated Security=True;TrustServerCertificate=True"))
             {
-                MessageBox.Show("Please fill in both Username and Password fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Open();
+                string query = "SELECT COUNT(*) FROM login WHERE username=@username AND password=@password";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@password", textBox2.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("LOGIN SUCCESS", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN LOGIN", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            
             }
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
